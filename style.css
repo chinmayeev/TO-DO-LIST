@@ -1,0 +1,289 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: url('bgr.jpg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(157, 66, 223, 0.8);
+  color: white;
+  position: absolute;
+  top: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+
+.profile {
+  width: 60px;
+  height: 60px;
+  background: url('prof.jpg.jpeg') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 4px solid white;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 6rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+ 
+  /* Align content to the right */
+  margin-left: auto;
+}
+
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+
+#task-input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+
+
+
+.add-btn {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.add-btn:hover {
+  background-color: #9246d8;
+  transform: scale(1.05);
+}
+
+
+.task-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border: 2px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+
+.task:hover {
+  transform: scale(1.02);
+}
+
+
+.task input {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  width: 80%;
+}
+
+
+.task input:disabled {
+  color: #333;
+}
+
+
+.edit-btn, .delete-btn {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-left: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.edit-btn:hover, .delete-btn:hover {
+  background-color: #dd0836;
+}
+
+
+#search {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+
+.clear-tasks {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.clear-tasks:hover {
+  background-color: #dd0836;
+}
+
+
+.err {
+  display: none;
+  background-color: rgb(234, 175, 175);
+  color: red;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+/* Scrollbar styling */
+.task-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.task-items::-webkit-scrollbar-thumb {
+  background-color: #6a0dad;
+  border-radius: 10px;
+}
+
+
+.task-items::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+
+.left-image {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px; /* Adjust width as needed */
+  height: auto;
+  border-radius: 10px; /* Optional: To give the image rounded corners */
+}
+
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align image to the left */
+  width: 100%;
+}
+
+
+.side-image {
+  width: 40%; /* Image width remains the same */
+  height: auto;
+  margin: 0; /* No spacing between image and task container */
+  padding-left: 80px; /* Increased padding to 60px */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+.side-image:hover {
+  transform: scale(1.4); /* Stronger zoom effect on hover */
+}
+
+
+.container {
+  width: 400%; /* Adjusted container width to balance image size */
+  max-width: 800px;
+  margin-top: 6rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-left: 0;
+}
+
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+
+.complete-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-left: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.complete-btn:hover {
+  background-color: #218838;
+}

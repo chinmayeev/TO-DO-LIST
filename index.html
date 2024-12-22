@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des tâches</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h3 class="title">Liste des tâches</h3>
+      <div class="profile"></div>
+    </div>
+   
+    <div class="main-content">
+      <img class="side-image" src="img2.webp.jpeg" alt="Task Image" />
+     
+      <div class="container">
+        <h6 class="title">The Task Board</h6>
+        <p class="err">Please enter a task</p>
+        <form>
+          <input id="task-input" type="text" placeholder="Add a task" />
+          <button class="add-btn">Add task</button>
+        </form>
+        <div class="sort-options">
+          <select id="sort-tasks">
+            <option value="asc">completed</option>
+            <option value="des">pending</option>
+          </select>
+        </div>
+        <input type="text" id="search" placeholder="Search a task" />
+        <ul class="task-items"></ul>
+        <button class="clear-tasks">Clear All Tasks</button>
+      </div>
+    </div>
+  </body>
+</html>
